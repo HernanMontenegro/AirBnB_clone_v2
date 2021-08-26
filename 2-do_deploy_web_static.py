@@ -22,7 +22,7 @@ def do_pack():
 
 def do_deploy(archive_path):
     """ distributes an archive to your web servers """
-    if (not archive_path or not os.path.exists(archive_path)):
+    if (not archive_path):
         return False
     try:
         put(archive_path, "/tmp")
