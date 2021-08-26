@@ -30,6 +30,8 @@ def do_deploy(archive_path):
         path = "/data/web_static/releases/" + folder_name
         sudo("mkdir -p " + path)
         sudo("tar -xzvf /tmp/" + archive_path.split('/')[1] + " -C " + path)
+        sudo("mv " + path + "/web_static/* " + path)
+        sudo("rm -rf " + path + "/web_static")
         sudo("rm /tmp/" + archive_path.split('/')[1])
         sudo("rm -rf /data/web_static/current")
         sudo("ln -s " + path + " /data/web_static/current")
