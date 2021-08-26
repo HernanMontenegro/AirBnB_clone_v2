@@ -5,7 +5,7 @@ from fabric.api import local, put, env, run
 import os
 from datetime import datetime
 
-env.hosts = ['35.227.18.212']
+env.hosts = ['35.227.18.212', '35.185.5.35']
 
 def do_pack():
     """ Create a compression """
