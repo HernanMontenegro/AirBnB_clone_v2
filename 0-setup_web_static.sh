@@ -5,7 +5,7 @@ sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 chown -R "$USER:$USER" /var/www/html
 
-directories=(/data/web_static/releases/test/ /data/web_static/shared/)
+directories=(/data/ /data/web_static/ /data/web_static/releases/ /data/web_static/releases/test/ /data/web_static/shared/)
 for i in "${directories[@]}"; do if [[ ! -d "$i" ]]; then mkdir "$i" ; fi; done
 
 echo "<html>
