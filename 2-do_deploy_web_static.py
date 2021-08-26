@@ -28,7 +28,7 @@ def do_deploy(archive_path):
         put(archive_path, "/tmp/")
         file_name = archive_path.split('/')[1]
         folder_name = file_name.split('.')[0]
-        path = "/data/web_static/releases/" + folder_name
+        path = "/data/web_static/releases/" + folder_name + "/"
         sudo("mkdir -p " + path)
         sudo("tar -xzvf /tmp/" + file_name + " -C " + path)
         sudo("mv " + path + "/web_static/* " + path)
