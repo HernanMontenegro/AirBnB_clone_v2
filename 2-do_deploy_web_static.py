@@ -25,17 +25,17 @@ def do_deploy(archive_path):
     if (not archive_path or not os.path.exists(archive_path)):
         return False
     try:
-        put(archive_path, "/tmp/")
-        file_name = archive_path.split('/')[1]
-        folder_name = file_name.split('.')[0]
+        put(archive_path, "/tmp")
+        file_name = archive_path.split('/')
+        folder_name = file_name.split('.')
         path = "/data/web_static/releases/" + folder_name
-        sudo("mkdir -p " + path)
-        sudo("tar zxvf /tmp/" + file_name + " -C " + path)
-        sudo("mv " + path + "/web_static/* " + path)
-        sudo("rm -rf " + path + "/web_static/")
-        sudo("rm /tmp/" + file_name)
-        sudo("rm -rf /data/web_static/current")
-        sudo("ln -s " + path + " /data/web_static/current")
-        return True
+        run("mkdir -p " + path)
+        run("tar zxvf /tmp/" + file_name + " -C " + path)
+        run("mv " + path + "/web_static/* " + path)
+        run("rm -rf " + path + "/web_static/")
+        run("rm -rf /tmp/" + file_name)
+        run("rm /data/web_static/current")
+        run("ln -sf " + path + " /data/web_static/current")
+        return (True)
     except:
         return False
