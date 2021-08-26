@@ -26,13 +26,14 @@ def do_deploy(archive_path):
         return False
     try:
         put(archive_path, "/tmp/")
-        folder_name = archive_path.split('/')[1].split('.')[0]
+        file_name = archive_path.split('/')[1]
+        folder_name = file_name.split('.')[0]
         path = "/data/web_static/releases/" + folder_name
         sudo("mkdir -p " + path)
-        sudo("tar -xzvf /tmp/" + archive_path.split('/')[1] + " -C " + path)
+        sudo("tar -xzvf /tmp/" + file_name + " -C " + path)
         sudo("mv " + path + "/web_static/* " + path)
         sudo("rm -rf " + path + "/web_static/")
-        sudo("rm /tmp/" + archive_path.split('/')[1])
+        sudo("rm /tmp/" + file_name)
         sudo("rm -rf /data/web_static/current")
         sudo("ln -s " + path + " /data/web_static/current")
         print("New version deployed!")
