@@ -7,6 +7,7 @@ from datetime import datetime
 
 env.hosts = ['35.227.18.212', '35.185.5.35']
 
+
 def do_pack():
     """ Create a compression """
     local("mkdir -p versions/")
@@ -17,6 +18,7 @@ def do_pack():
         return "{}.tgz".format(name)
     except:
         return None
+
 
 def do_deploy(archive_path):
     """ distributes an archive to your web servers """
