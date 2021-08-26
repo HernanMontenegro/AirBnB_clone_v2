@@ -2,11 +2,10 @@
 """ fabric compress module """
 
 from fabric.api import local, put, env, run
-from fabric.contrib import files
+import os
 from datetime import datetime
 
 env.hosts = ['35.227.18.212', '	35.185.5.35']
-env.user = "ubuntu"
 
 def do_pack():
     """ Create a compression """
@@ -21,7 +20,7 @@ def do_pack():
 
 def do_deploy(archive_path):
     """ distributes an archive to your web servers """
-    if (not files.exists(archive_path)):
+    if (not os.path.exists(archive_path)):
         return False
     put(archive_path, "/tmp/")
     folder_name = archive_path.split('/')[1].split('.')[0]
