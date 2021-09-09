@@ -32,7 +32,7 @@ def Python_is_fun(text="is cool"):
 @app.route('/number/<int:n>')
 def display_if_integer(n):
     ''' Return the desired string '''
-    return n + "is a number"
+    return (n + "is a number")
 
 if (__name__ == '__main__'):
     app.run(host='0.0.0.0', port=5000)
