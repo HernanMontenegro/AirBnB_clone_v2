@@ -32,8 +32,11 @@ def Python_is_fun(text="is cool"):
 @app.route('/number/<n>')
 def display_if_integer(n):
     ''' Return the desired string '''
-    if (type(n) == int):
+    try:
+        me = int(n)
         return "{:d} is a number".format(n)
+    except:
+        pass
 
 if (__name__ == '__main__'):
     app.run(host='0.0.0.0', port=5000)
