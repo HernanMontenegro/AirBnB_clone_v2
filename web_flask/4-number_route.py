@@ -29,14 +29,10 @@ def Python_is_fun(text="is cool"):
     text.replace('_', ' ')
     return "Python " + text
 
-@app.route('/number/<n>')
+@app.route('/number/<int:n>')
 def display_if_integer(n):
     ''' Return the desired string '''
-    try:
-        me = int(n)
-        return "{:d} is a number".format(n)
-    except:
-        pass
+    return n + "is a number"
 
 if (__name__ == '__main__'):
     app.run(host='0.0.0.0', port=5000)
