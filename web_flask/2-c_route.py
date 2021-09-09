@@ -20,7 +20,7 @@ def hbnb():
 def C_is_fun(text):
     ''' Return the desired string '''
     text.replace('_', ' ')
-    return text
+    return "C " + text
 
 if (__name__ == '__main__'):
     app.run(host='0.0.0.0', port=5000)
