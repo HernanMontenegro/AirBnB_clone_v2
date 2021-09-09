@@ -7,5 +7,5 @@ app.url_map.strict_slashes = False
 app.run(host='0.0.0.0', port=5000)
 
 @app.route('/')
-def hello_hbnb():
+def hello_world():
     return "Hello HBNB!"
