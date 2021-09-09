@@ -22,9 +22,9 @@ def C_is_fun(text):
     text.replace('_', ' ')
     return "C " + text
 
-@app.route('/python', defaults={'text': "is cool"})
-@app.route('/python/(<text>)')
-def Python_is_fun(text):
+@app.route('/python/<text>')
+@app.route('/python')
+def Python_is_fun(text="is cool"):
     ''' Return the desired string '''
     text.replace('_', ' ')
     return "Python " + text
