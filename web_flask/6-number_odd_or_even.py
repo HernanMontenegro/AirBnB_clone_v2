@@ -40,7 +40,7 @@ def display_if_integer_template(n):
     return render_template('5-number.html', n=n)
 
 @app.route('/number_odd_or_even/<int:n>')
-def display_if_integer_template(n):
+def display_if_integer_template_ans(n):
     ''' Return the desired string '''
     ans = "even"
     if (n % 2 != 0):
