@@ -22,8 +22,7 @@ def hbnb():
 @app.route('/c/<text>')
 def C_is_fun(text):
     ''' Return the desired string '''
-    text.replace('_', ' ')
-    return "C " + text
+    return "C " + text.replace('_', ' ')
 
 
 @app.route('/python/<text>')
@@ -31,7 +30,7 @@ def C_is_fun(text):
 def Python_is_fun(text="is cool"):
     ''' Return the desired string '''
     text.replace('_', ' ')
-    return "Python " + text
+    return "Python {}".format(text.replace('_', ' '))
 
 
 @app.route('/number/<int:n>')

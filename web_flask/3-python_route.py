@@ -22,8 +22,7 @@ def hbnb():
 @app.route('/c/<text>')
 def C_is_fun(text):
     ''' Return the desired string '''
-    text.replace('_', ' ')
-    return "C " + text
+    return "C " + text.replace('_', ' ')
 
 
 @app.route('/python/<text>')
