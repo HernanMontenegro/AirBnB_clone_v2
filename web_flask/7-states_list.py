@@ -56,17 +56,18 @@ def display_if_integer_template_ans(n):
     return render_template('6-number_odd_or_even.html', n=n, answer=ans)
 
 
-@app.teardown_appcontext
-def closeame():
-    '''closeame'''
-    storage.close()
-
-
 @app.route('/states_list')
 def States():
     ''' List of all states '''
     list_states = storage.all(State).values()
     return render_template('7-states_list.html', list_states=list_states)
+
+
+@app.teardown_appcontext
+def closeame():
+    '''closeame'''
+    storage.close()
+
 
 if (__name__ == '__main__'):
     app.run(host='0.0.0.0', port=5000)
