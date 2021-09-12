@@ -30,8 +30,7 @@ def C_is_fun(text):
 @app.route('/python')
 def Python_is_fun(text="is cool"):
     ''' Return the desired string '''
-    text.replace('_', ' ')
-    return "Python {}".format(text)
+    return "Python {}".format(text.replace('_', ' '))
 
 if (__name__ == '__main__'):
     app.run(host='0.0.0.0', port=5000)
