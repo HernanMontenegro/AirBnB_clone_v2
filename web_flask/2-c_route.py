@@ -4,17 +4,20 @@ from flask import Flask
 
 
 app = Flask(__name__)
-app.url_map.strict_slashes=False
+app.url_map.strict_slashes = False
+
 
 @app.route('/')
 def hello_hbnb():
     ''' Return the desired string '''
     return "Hello HBNB!"
 
+
 @app.route('/hbnb')
 def hbnb():
     ''' Return the desired string '''
     return "HBNB"
+
 
 @app.route('/c/<text>')
 def C_is_fun(text):
