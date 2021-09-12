@@ -64,7 +64,7 @@ def States():
 
 
 @app.teardown_appcontext
-def closeame():
+def closeame(ctx):
     '''closeame'''
     storage.close()
 
