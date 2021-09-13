@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 print("eeeeeeeeeee")
-print(storage.all(State).values())
+print(storage.all(State).values()['421a55f4-7d82-47d9-b54c-a76916479553'])
 print("eeeeeeeeeeeeeeee")
 
 
