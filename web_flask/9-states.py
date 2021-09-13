@@ -70,6 +70,13 @@ def Cities():
     return render_template('8-cities_by_states.html', list_states=list_states)
 
 
+@app.route('/states/<id>')
+def SelectState(id)
+    ''' Select State by id '''
+    states = storage.all(State).values()
+    return render_template('8-cities_by_states.html', state=states[id])
+
+
 @app.teardown_appcontext
 def closeame(ctx):
     '''closeame'''
