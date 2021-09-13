@@ -72,7 +72,7 @@ def Cities():
 
 @app.route('/states')
 @app.route('/states/<id>')
-def SelectState(id):
+def SelectState(id=None):
     ''' Select State by id '''
     states = storage.all(State)
     key = "{}.{}".format('State', id)
