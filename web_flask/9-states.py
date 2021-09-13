@@ -8,6 +8,10 @@ from models.state import State
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+print("eeeeeeeeeee")
+print(storage.all(State).values())
+print("eeeeeeeeeeeeeeee")
+
 
 @app.route('/')
 def hello_hbnb():
