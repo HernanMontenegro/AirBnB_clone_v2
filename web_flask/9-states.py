@@ -9,7 +9,9 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 print("eeeeeeeeeee")
-print(type(storage.all(State).values()))
+for s in storage.all(State).values():
+    print(s)
+    break
 print("eeeeeeeeeeeeeeee")
 
 
