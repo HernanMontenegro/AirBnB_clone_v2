@@ -8,12 +8,6 @@ from models.state import State
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
-print("eeeeeeeeeee")
-for s in storage.all(State).values():
-    print(s)
-    break
-print("eeeeeeeeeeeeeeee")
-
 
 @app.route('/')
 def hello_hbnb():
@@ -76,11 +70,13 @@ def Cities():
     return render_template('8-cities_by_states.html', list_states=list_states)
 
 
+@app.route('/states')
 @app.route('/states/<id>')
 def SelectState(id):
     ''' Select State by id '''
-    states = storage.all(State).values()
-    return render_template('8-cities_by_states.html', state=states[id])
+    states = storage.all(State)
+    key = "{}.{}".format('State', id)
+    return render_template('9-states.html', states=states, key=key, id=id)
 
 
 @app.teardown_appcontext
